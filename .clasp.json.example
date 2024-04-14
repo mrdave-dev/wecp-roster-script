@@ -1,0 +1,7 @@
+{
+  "scriptId": "{script id}",
+  "rootDir": "{the path to this directory}",
+  "parentId": [
+    "{parent id}"
+  ]
+}
