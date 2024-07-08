@@ -1,10 +1,13 @@
 {
   "name": "wecp-roster-script",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "open": "clasp open",
+    "prebuild": "node -p \"'export const VERSION = ' + JSON.stringify(require('./package.json').version)\" > src/version.ts && eslint --fix src/version.ts",
     "push": "clasp push",
     "push:watch": "clasp push --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +17,12 @@
   "dependencies": {
     "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.83"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "@stylistic/eslint-plugin": "^2.3.0",
+    "eslint": "^9.6.0",
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.15.0"
   }
 }
